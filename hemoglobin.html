@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hemoglobin Code</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            background-image: url('bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 0;
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        header {
+            background: #f5f5f5;
+            padding: 10px 8%;
+            margin: 30px;
+            border-radius: 70px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .logo {
+            text-align: center;
+            font-weight: bold;
+            color: #e53935;
+            -webkit-text-stroke: 1px #000000;
+            font-size: 30px;
+            margin-bottom: 5px;
+        }
+
+        .logo img {
+            width: 90px;
+            position: absolute;
+            display: flex;
+            left: 45px;
+            top: 45px;
+            border-radius: 100px;
+            border: 2px solid #FFD700;
+            transition: 0.3s;
+
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #222;
+            background: #f5f5f5;
+            padding: 10px 10px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+            border: 2px solid #e53935;
+        }
+
+        nav a:hover {
+            background: #e53935;
+            color: white;
+        }
+
+        .card {
+            background: #a80202;
+            padding: 20px;
+            border-radius: 50px;
+            border: 2px solid #000000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            margin: 20px auto;
+            max-width: 50%;
+        }
+
+        .text-card {
+            background: rgba(255, 255, 255, 0.6);
+            border-right: 5px solid #c5120f;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 15px auto;
+            width: 80%;
+            max-width: 800px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            line-height: 1.6;
+            transition: transform 0.3s ease;
+
+        }
+
+        .text-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .blood-card {
+            width: 50%;
+            max-width: 500px;
+            background: rgb(251, 248, 248);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: left;
+            margin: 40px auto;
+            padding: 30px;
+            display: block;
+        }
+
+        .header {
+            display: flex;
+            background-color: #853434;
+            color: rgba(255, 255, 255, 0.945);
+            padding: 10px 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: left;
+            letter-spacing: 1px;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            border-bottom: 1px solid #eee;
+            transition: background 0.3s;
+        }
+
+        .row:last-child {
+            border-bottom: none;
+        }
+
+        .row:hover {
+            background-color: #fff8f8;
+        }
+
+        .column-type {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #822121;
+        }
+
+        .column-donate {
+            flex: 2;
+            color: #444;
+            line-height: 1.5;
+        }
+
+        .icon {
+            margin-right: 12px;
+            font-size: 1rem;
+            color: #b94545;
+        }
+
+        @media (max-width: 500px) {
+            .header {
+                display: none;
+            }
+
+            .row {
+                flex-direction: column;
+                text-align: left;
+                padding: 20px;
+            }
+
+            .column-type {
+                margin-bottom: 10px;
+                font-size: 1.3rem;
+                justify-content: left;
+            }
+
+            .column-donate {
+                font-size: 0.95rem;
+            }
+
+            .text-card {
+                width: 90%;
+            }
+        }
+
+        p,
+        h2,
+        h3 {
+            text-align: center;
+        }
+
+        h3 {
+            color: #FFD700;
+            -webkit-text-stroke: 1px #000000;
+        }
+
+        .table {
+            width: 350px;
+            min-width: 300px;
+            margin: 50px auto;
+            border-collapse: collapse;
+            background-color: #f5efef;
+            font-family: Arial, sans-serif;
+        }
+
+        th {
+            background-color: #700c0c;
+            color: #dadada;
+            padding: 10px;
+            border: 1px solid #938c8c;
+            text-align: center;
+        }
+
+        td {
+            padding: 8px;
+            border: 1px solid #787878;
+            text-align: center;
+            background-color: #ffffff7c;
+            color: #000000;
+        }
+
+        .image-side img {
+            width: 400px;
+            height: auto;
+            border-radius: 6px;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .image-area img {
+            width: 200px;
+            height: auto;
+            border-radius: 5px;
+            margin: 20px auto;
+            display: block;
+        }
+
+        tr:hover {
+            background-color: #ebc0c0d3;
+        }
+
+        hr {
+            border: 0;
+            width: 50%;
+            margin: 20px auto;
+            border-top: 2px solid #611d1d;
+            height: 1px;
+            background-color: #e36969;
+        }
+
+        .my-button:hover {
+            background-color: #9b9595;
+            transform: scale(1.05);
+            transition: 0.3s;
+            box-shadow: 0px 4px 15px rgba(11, 10, 10, 0.3);
+        }
+
+        .floating-quote {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #702121;
+            color: rgb(247, 242, 242);
+            padding: 12px 20px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0px 4px 15px rgba(18, 14, 14, 0.3);
+            z-index: 1000;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            transition: transform 0.3s ease;
+        }
+
+        .floating-quote:hover {
+            transform: scale(1.1);
+            background-color: #701414;
+        }
+
+        .floating-quote i::before {
+            content: "💞";
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.jpg">
+
+            🩸 LifeLink
+        </div>
+
+        <nav>
+            <a href="homepage.html">Home</a>
+            <a href="donation.html">About Donation</a>
+            <a href="donerfit.html">DonerFit</a>
+            <a href="hemoglobin.html">HemoglobinCode</a>
+            <a href="firstdrop.html">FirstDrop</a>
+            <a href="TriSave.html">TriSave</a>
+            <a href="myths&facts.html">myths & facts</a>
+            <a href="blood map.html">BloodMap</a>
+        </nav>
+    </header>
+    <h1 style="color:rgb(214, 214, 214); font-size: 35px;" align="center">
+        <div class="card">
+            •Information about blood itself
+            <svg width="50" height="50" viewBox="0 0 24 24" fill="#5e0b0b" xmlns="http://www.w3.org/2000/svg"
+                style="vertical-align: middle;">
+                <path
+                    d="M12 21.5C15.5899 21.5 18.5 18.5899 18.5 15C18.5 11.4101 12 2.5 12 2.5C12 2.5 5.5 11.4101 5.5 15C5.5 18.5899 8.41015 21.5 12 21.5Z" />
+            </svg>
+        </div>
+    </h1>
+
+    <h3 style="font-size: 30px">First: Blood is a miracle ♡•</h3>
+
+    <div class="text-card">
+        <p>
+            Blood is the miracle that carries the secret of life.
+            It is not just a fluid flowing through our bodies
+            <br>
+            -There is a complete therapeutic system. Each of its
+            components has a specific and essential role in fighting
+            <br>
+            serious diseases such as:
+            (anemia, bleeding, cancer, and liver diseases)
+        </p>
+    </div>
+
+    <div class="image-area">
+        <img src="hc.jpg" alt="blood">
+    </div>
+
+    <div style="text-align: center; margin: 30px 0;">
+        <a href="https://youtu.be/xYsmJFNCMDI?si=YnUoMK6XygNOqiG4" class="my-button" style=" background-color: #601414; 
+             color: white; 
+             padding: 10px 20px; 
+             text-decoration: none; 
+             border-radius: 5px;
+             font-weight: bold;
+             display: inline-block;">
+            Hemoglobin Details &nbsp; &#10142;
+        </a>
+    </div>
+
+    <div class="text-card">
+        <p>
+            Donating blood means that one drop can turn into a new life
+            for another person
+        </p>
+    </div>
+
+    <br>
+    <hr><br>
+
+    <h3 style="font-size: 30px;">Second: Blood types</h3>
+
+    <div class="text-card">
+        <p>How many blood types are there ?</p>
+        <p>There are 8 main blood types, determined based on two systems:</p>
+        <p>
+            <b>The First:</b>
+            <br>
+            The ABO system (depends on the presence of A or
+            B antigens on the surface of red blood cells)
+        </p>
+    </div>
+
+    <table border="5" style="width :40%; margin:0 auto;">
+        <tr>
+            <th>Blood Type</th>
+            <th>Antigens</th>
+        </tr>
+        <tr>
+            <td>Type A</td>
+            <td>Has A antigens</td>
+        </tr>
+        <tr>
+            <td>Type B</td>
+            <td>Has B antigens</td>
+        </tr>
+        <tr>
+            <td>Type AB</td>
+            <td>Has Both A and B antigens</td>
+        </tr>
+        <tr>
+            <td>Type O</td>
+            <td>Has neither A nor B antigens</td>
+        </tr>
+    </table>
+
+    <div class="text-card">
+        <p>
+            <b>The Second:</b>
+            <br>
+            The Rhesus factor (Rh) (an additional protein
+            either present or absent
+            <br>
+            they call it positive or negative)
+        </p>
+    </div>
+
+    <table border="5" style="width :40%;  margin:0 auto;">
+        <tr>
+            <th>Rhesus Factor</th>
+            <th>Protein</th>
+        </tr>
+        <tr>
+            <td>Positive &nbsp; +</td>
+            <td>The protein is present</td>
+        </tr>
+        <tr>
+            <td>Negative &nbsp; -</td>
+            <td>The protein is absent</td>
+        </tr>
+    </table>
+
+    <h2 style="color:rgb(54, 1, 1); font-size: 30px;"><b><i>Who can donate to whom ?</i></b></h2>
+
+    <div class="image-side">
+        <img src="hc2.jpg" alt="blood">
+    </div>
+
+    <div class="blood-card">
+        <div class="header">
+            <div style="flex: 1;">Donor Blood Type</div>
+            <div style="flex: 2;">Can Donate To</div>
+        </div>
+        <div class="row">
+            <div class="column-type">O-</div>
+            <div class="column-donate">Everyone (Universal Donor)</div>
+        </div>
+        <div class="row">
+            <div class="column-type">O+</div>
+            <div class="column-donate">O+, A+, B+, AB+</div>
+        </div>
+        <div class="row">
+            <div class="column-type">A-</div>
+            <div class="column-donate">A-, A+, AB-, AB+</div>
+        </div>
+        <div class="row">
+            <div class="column-type">A+</div>
+            <div class="column-donate">A+, AB+</div>
+        </div>
+        <div class="row">
+            <div class="column-type">B-</div>
+            <div class="column-donate">B-, B+, AB-, AB+</div>
+        </div>
+        <div class="row">
+            <div class="column-type">B+</div>
+            <div class="column-donate">B+, AB+</div>
+        </div>
+        <div class="row">
+            <div class="column-type">AB-</div>
+            <div class="column-donate">AB-, AB+</div>
+        </div>
+        <div class="row">
+            <div class="column-type">AB+</div>
+            <div class="column-donate">AB+ only (Universal Recipient)</div>
+        </div>
+    </div>
+
+    <br>
+    <hr><br>
+
+    <div class="text-card">
+        <p style="color:rgb(77, 29, 29)"><b><em>Universal donor: O-</em></b></p>
+        <p>
+            -There are no antigens (no A, no B, no Rh) on the red blood
+            cells, so the recipient's immune system does not recognize
+            them as foreign.
+        </p>
+    </div>
+
+    <div class="text-card">
+        <p style="color:rgb(77, 29, 29)"><b><em>Universal recipient: AB+</em></b></p>
+        <p>
+            Their body does not produce antibodies against A or B,
+            so they can receive from all blood types.
+        </p>
+    </div>
+
+    <br>
+    <hr><br>
+
+    <p style="color:rgb(214, 193, 0); font-size: 20px;">
+        <b><u><i>Let's begin our journey to learn more about donation and how to donate</i></u></b>
+    </p>
+
+    <h1 style="color:rgb(214, 214, 214); font-size: 30px;" align="center">
+        <div class="card">
+            A small piece of information about the<br>
+            role of data science in core blood
+        </div>
+    </h1>
+
+    <div class="text-card">
+        <p><b>1-Forecasting demand:-</b></p>
+        <p>Using historical data to predict future needs for blood types based on seasons, holidays, and emergencies.
+        </p>
+        <p><b>Impact:</b> Prevents blood shortages during critical periods.</p>
+    </div>
+
+    <div class="text-card">
+        <p><b>2-Donor retention and engagement analytics:-</b></p>
+        <p>Analyzing donor behavior to identify regular donors and send personalized notifications when they become
+            eligible again (every 3-4 months).</p>
+        <p><b>Impact:</b> Building a loyal donor community and reducing emergency campaigns.</p>
+    </div>
+
+    <div class="text-card">
+        <p><b>3-Inventory optimization and waste reduction:-</b></p>
+        <p>Smart algorithms to manage the life cycle of blood products. Platelets expire within 5 days, and red blood
+            cells within 42 days.</p>
+        <p><b>Impact:</b> Reducing medical waste and ensuring every donation is used effectively.</p>
+    </div>
+
+    <div class="text-card">
+        <p><b>4-Donor eligibility prediction:-</b></p>
+        <p>Predictive models that assess the donor's health profile (age, weight, previous hemoglobin) to determine
+            eligibility.</p>
+        <p><b>Impact:</b> Improving user experience and reducing on-site deferrals.</p>
+    </div>
+
+    <div style="text-align: center; margin: 30px 0;">
+        <a href="https://youtu.be/ylK3_kc0gzg?si=5euBWME4pqUp_NVV" class="my-button" style="background-color: #682222; 
+           color: white; 
+           padding: 10px 20px; 
+           text-decoration: none; 
+           border-radius: 5px;
+           font-weight: bold;
+            display: inline-block;">
+            Donate Now &nbsp; &#10142;
+        </a>
+    </div>
+
+    <div class="floating-quote">
+        <i class="fa fa-heartbeat"></i>
+        <span>"Your blood is someone is hope for tomorrow"</span>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Myths & Facts</title>
+    <style>
+        body {
+            background-color: #ffe6e6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* padding: 20px; */
+            background-image: url(bg.jpg);
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+
+        }
+
+        header {
+            background: #f5f5f5;
+            padding: 10px 8%;
+            margin: 30px;
+            border-radius: 70px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .logo {
+            text-align: center;
+            font-weight: bold;
+            color: #e53935;
+            -webkit-text-stroke: 1px #000000;
+            font-size: 30px;
+            margin-bottom: 5px;
+        }
+
+        .logo img {
+            width: 90px;
+            position: absolute;
+            display: flex;
+            left: 45px;
+            top: 45px;
+            border-radius: 100px;
+            border: 2px solid #FFD700;
+            transition: 0.3s;
+
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #222;
+            background: #f5f5f5;
+            padding: 10px 10px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+            border: 2px solid #e53935;
+        }
+
+        nav a:hover {
+            background: #e53935;
+            color: white;
+        }
+
+        .title {
+            text-align: center;
+            color: #ff0606;
+            -webkit-text-stroke: 1px #000000;
+            margin-bottom: 40px;
+        }
+
+        /* كل كارد لوحده وفي نص الصفحة ومسافة كبيرة بينهم */
+        .box {
+            display: flex;
+            flex-direction: column;
+            /* الكاردز تحت بعض */
+            align-items: center;
+            /* كل كارد في النص */
+            justify-content: center;
+            gap: 60px;
+            /* مسافة كبيرة بين كل كارد والتاني */
+            margin-top: 30px;
+            margin-bottom: 50px;
+        }
+
+
+        .mcard {
+            width: 320px;
+            /* أكبر شوية عشان واضح */
+            height: 360px;
+            /* أكبر شوية */
+            background: white;
+            border-radius: 20px;
+            box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2);
+            /* ظل أكبر عشان يبان منفصل */
+            text-align: center;
+            position: relative;
+        }
+
+
+        .ch {
+            display: none;
+        }
+
+
+        .inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transition: 0.6s;
+            transform-style: preserve-3d;
+            border-radius: 20px;
+        }
+
+
+        .ch:checked+.inner {
+            transform: rotateY(180deg);
+        }
+
+
+        .front-side,
+        .back-side {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+
+        .front-side {
+            background: white;
+            border: 3px solid #cc0000;
+        }
+
+
+        .back-side {
+            background: #1a6b53;
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+
+        .myth {
+            font-size: 24px;
+            font-weight: bold;
+            color: #cc0000;
+            margin-top: 30px;
+        }
+
+        .fact {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 30px;
+        }
+
+        .small-text {
+            font-size: 12px;
+            color: gray;
+            margin-top: 50px;
+        }
+
+        .front-side p {
+            font-size: 18px;
+            margin-top: 25px;
+            line-height: 1.4;
+            padding: 0 10px;
+        }
+
+        .back-side p {
+            font-size: 16px;
+            margin-top: 25px;
+            line-height: 1.5;
+            padding: 0 10px;
+        }
+
+        label {
+            display: block;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #ffd000;
+            -webkit-text-stroke: 1px #000000;
+            font-size: 16px;
+        }
+
+
+        .card-number {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.jpg">
+
+            🩸 LifeLink
+        </div>
+
+        <nav>
+            <a href="homepage.html">Home</a>
+            <a href="donation.html">About Donation</a>
+            <a href="donerfit.html">DonerFit</a>
+            <a href="hemoglobin.html">HemoglobinCode</a>
+            <a href="firstdrop.html">FirstDrop</a>
+            <a href="TriSave.html">TriSave</a>
+            <a href="myths&facts.html">myths & facts</a>
+            <a href="blood map.html">BloodMap</a>
+        </nav>
+    </header>
+    <div class="title">
+        <h1>🩸 Blood Donation: 15 Myths & Facts ❤️</h1>
+        <p>✨ Click on any card to flip it ✨</p>
+    </div>
+
+    <div class="box">
+
+        <!-- الكارت رقم 1 -->
+        <div class="mcard">
+            <input type="checkbox" id="c1" class="ch">
+            <label for="c1" class="inner">
+                <div class="front-side">
+                    <div class="myth">❌ MYTH</div>
+                    <p>Donating blood weakens your immune system</p>
+                    <div class="small-text">📌 click to flip</div>
+                </div>
+                <div class="back-side">
+                    <div class="fact">✅ FACT</div>
+                    <p>Blood donation does NOT weaken immunity! Your body quickly replaces blood cells.</p>
+                </div>
+            </label>
+        </div>
+
+        <!-- الكارت رقم 2 -->
+        <div class="mcard">
+            <input type="checkbox" id="c2" class="ch">
+            <label for="c2" class="inner">
+                <div class="front-side">
+                    <div class="myth">❌ MYTH</div>
+                    <p>Only rare blood types are needed</p>
+                    <div class="small-text">📌 click to flip</div>
+                </div>
+                <div class="back-side">
+                    <div class="fact">✅ FACT</div>
+                    <p>ALL blood types are vital! Every type saves lives in emergencies.</p>
+                </div>
+            </label>
+        </div>
+
+        <!-- الكارت رقم 3 -->
+        <div class="mcard">
+            <input type="checkbox" id="c3" class="ch">
+            <label for="c3" class="inner">
+                <div class="front-side">
+                    <div class="myth">❌ MYTH</div>
+                    <p>If I get a vaccine, I cannot donate blood</p>
+                    <div class="small-text">📌 click to flip</div>
+                </div>
+                <div class="back-side">
+                    <div class="fact">✅ FACT</div>
+                    <p>Most vaccines do NOT disqualify you. A short waiting period may apply.</p>
+                </div>
+            </label>
+        </div>
+
+        <!-- الكارت رقم 4 -->
+        <div class="mcard">
+            <input type="checkbox" id="c4" class="ch">
+            <label for="c4" class="inner">
+                <div class="front-side">
+                    <div class="myth">❌ MYTH</div>
+                    <p>Pregnant women can donate blood normally</p>
+                    <div class="small-text">📌 click to flip</div>
+                </div>
+                <div class="back-side">
+                    <div class="fact">✅ FACT</div>
+                    <p>Pregnancy defers donation. Wait 6 months after delivery to donate.</p>
+                </div>
+            </label>
+        </div>
+
+        <!-- الكارت رقم5 -->
+        <div class="mcard">
+            <input type="checkbox" id="c5" class="ch">
+            <label for="c5" class="inner">
+                <div class="front-side">
+                    <div class="myth">❌ MYTH</div>
+                    <p>Age 40 is the maximum limit for blood donation</p>
+                    <div class="small-text">📌 click to flip</div>
+                </div>
+                <div class="back-side">
+                    <div class="fact">✅ FACT</div>
+                    <p>Donation is allowed up to age 65 or older depending on health.</p>
+                </div>
+            </label>
+        </div>
+
+        <!-- الكارت رقم 6 -->
+        <div class="mcard">
+            <input type="checkbox" id="c6" class="ch">
+            <label for="c6" class="inner">
+                <div class="front-side">
+                    <div class="myth">❌ MYTH</div>
+                    <p>Blood donation leaves you weak for weeks</p>
+                    <div class="small-text">📌 click to flip</div>
+                </div>
+                <div class="back-side">
+                    <div class="fact">✅ FACT</div>
+                    <p>Your body replaces fluids within 24-48 hours. Most donors feel fine next day!</p>
+                </div>
+            </label>
+        </div>
+
+        <!-- الكارت رقم 7 -->
+        <div class="mcard">
+            <input type="checkbox" id="c7" class="ch">
+            <label for="c7" class="inner">
+                <div class="front-side">
+                    <div class="myth">❌ MYTH</div>
+                    <p>Drinking alcohol before donation helps blood flow</p>
+                    <div class="small-text">📌 click to flip</div>
+                </div>
+                <div class="back-side">
+                    <div class="fact">✅ FACT</div>
+                    <p>Alcohol causes dehydration. Avoid alcohol 24 hours before donating.</p>
+                </div>
+            </label>
+        </div>
+
+        <!-- الكارت رقم 8 -->
+        <div class="mcard">
+            <input type="checkbox" id="c8" class="ch">
+            <label for="c8" class="inner">
+                <div class="front-side">
+                    <div class="myth">❌ MYTH</div>
+                    <p>If you weigh less than 50 kg, you can still donate blood</p>
+                    <div class="small-text">📌 click to flip</div>
+                </div>
+                <div class="back-side">
+                    <div class="fact">✅ FACT</div>
+                    <p>Most blood banks require donors to weigh at least 50 kg to avoid fainting.</p>
+                </div>
+            </label>
+        </div>
+
+        <!-- الكارت رقم 9 -->
+        <div class="mcard">
+            <input type="checkbox" id="c9" class="ch">
+            <label for="c9" class="inner">
+                <div class="front-side">
+                    <div class="myth">❌ MYTH</div>
+                    <p>People with high blood pressure can never donate</p>
+                    <div class="small-text">📌 click to flip</div>
+                </div>
+                <div class="back-side">
+                    <div class="fact">✅ FACT</div>
+                    <p>If well-controlled with medication, you can donate. Staff checks on-site.</p>
+                </div>
+            </label>
+        </div>
+
+        <!-- الكارت رقم 10 -->
+        <div class="mcard">
+            <input type="checkbox" id="c10" class="ch">
+            <label for="c10" class="inner">
+                <div class="front-side">
+                    <div class="myth">❌ MYTH</div>
+                    <p>You must donate on an empty stomach</p>
+                    <div class="small-text">📌 click to flip</div>
+                </div>
+                <div class="back-side">
+                    <div class="fact">✅ FACT</div>
+                    <p>Always eat a healthy meal before donating! Empty stomach causes dizziness.</p>
+                </div>
+            </label>
+        </div>
+
+        <!-- الكارت رقم 11 -->
+        <div class="mcard">
+            <input type="checkbox" id="c11" class="ch">
+            <label for="c11" class="inner">
+                <div class="front-side">
+                    <div class="myth">❌ MYTH</div>
+                    <p>Any medication permanently disqualifies you</p>
+                    <div class="small-text">📌 click to flip</div>
+                </div>
+                <div class="back-side">
+                    <div class="fact">✅ FACT</div>
+                    <p>Most medications are allowed. Only blood thinners cause temporary deferral.</p>
+                </div>
+            </label>
+        </div>
+
+        <!-- الكارت رقم 12 -->
+        <div class="mcard">
+            <input type="checkbox" id="c12" class="ch">
+            <label for="c12" class="inner">
+                <div class="front-side">
+                    <div class="myth">❌ MYTH</div>
+                    <p>You can donate blood even if you have a cold</p>
+                    <div class="small-text">📌 click to flip</div>
+                </div>
+                <div class="back-side">
+                    <div class="fact">✅ FACT</div>
+                    <p>Wait until fully recovered with no fever for at least 7-14 days.</p>
+                </div>
+            </label>
+        </div>
+
+        <!-- الكارت رقم 13 -->
+        <div class="mcard">
+            <input type="checkbox" id="c13" class="ch">
+            <label for="c13" class="inner">
+                <div class="front-side">
+                    <div class="myth">❌ MYTH</div>
+                    <p>Traveling abroad means you can never donate blood</p>
+                    <div class="small-text">📌 click to flip</div>
+                </div>
+                <div class="back-side">
+                    <div class="fact">✅ FACT</div>
+                    <p>Travel to malaria-risk regions requires waiting period (3-12 months).</p>
+                </div>
+            </label>
+        </div>
+
+        <!-- الكارت رقم 14 -->
+        <div class="mcard">
+            <input type="checkbox" id="c14" class="ch">
+            <label for="c14" class="inner">
+                <div class="front-side">
+                    <div class="myth">❌ MYTH</div>
+                    <p>You cannot exercise after donating blood</p>
+                    <div class="small-text">📌 click to flip</div>
+                </div>
+                <div class="back-side">
+                    <div class="fact">✅ FACT</div>
+                    <p>Avoid heavy lifting for 24 hours, but light walking is perfectly fine.</p>
+                </div>
+            </label>
+        </div>
+
+        <!-- الكارت رقم 15 -->
+        <div class="mcard">
+            <input type="checkbox" id="c15" class="ch">
+            <label for="c15" class="inner">
+                <div class="front-side">
+                    <div class="myth">❌ MYTH</div>
+                    <p>Eating fatty foods before donation gives you good energy</p>
+                    <div class="small-text">📌 click to flip</div>
+                </div>
+                <div class="back-side">
+                    <div class="fact">✅ FACT</div>
+                    <p>Fatty meals make plasma "milky". Eat light, iron-rich foods instead.</p>
+                </div>
+            </label>
+        </div>
+
+    </div>
+
+    <footer>
+        <p><b> ⚡ CLICK ANY CARD TO FLIP ⚡ </b></p>
+    </footer>
+
+</body>
+
+</html>

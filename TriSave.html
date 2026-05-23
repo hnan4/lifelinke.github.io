@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TriSave</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f5f5f5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url(bg.jpg);
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+
+        }
+
+        header {
+            background: #f5f5f5;
+            padding: 10px 8%;
+            margin: 30px;
+            border-radius: 70px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .logo {
+            text-align: center;
+            font-weight: bold;
+            color: #e53935;
+            -webkit-text-stroke: 1px #000000;
+            font-size: 30px;
+            margin-bottom: 5px;
+        }
+
+        .logo img {
+            width: 90px;
+            position: absolute;
+            display: flex;
+            left: -430px;
+            top: 45px;
+            border-radius: 100px;
+            border: 2px solid #FFD700;
+            transition: 0.3s;
+
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #222;
+            background: #f5f5f5;
+            padding: 10px 10px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+            border: 2px solid #e53935;
+        }
+
+        nav a:hover {
+            background: #e53935;
+            color: white;
+        }
+
+        .fly {
+            width: 350px;
+            position: fixed;
+            top: 10px;
+            right: 20px;
+            background-color: #702121;
+            color: rgb(247, 242, 242);
+            padding: 15px 15px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0px 4px 15px rgba(18, 14, 14, 0.3);
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            transition: transform 0.3s ease;
+        }
+
+        .fly:hover {
+            transform: scale(1.1);
+            background-color: #701414;
+        }
+
+        .header1 {
+            width: 500px;
+            background-color: #b90401e3;
+            border: 2px solid #000000be;
+            color: rgb(214, 214, 214);
+            border-radius: 30px;
+            margin: 40px;
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 55px;
+        }
+
+        .header2 {
+            width: 450px;
+            margin-top: -10px;
+            margin-left: 80px;
+            color: #ffe600;
+            -webkit-text-stroke: 1px #000000;
+        }
+
+        .usage {
+            width: 900px;
+            height: 700px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 20px;
+            border-top: 5px solid #c5120f;
+            box-shadow: 0 5px 20px rgb(0, 0, 0, 1);
+            margin: 70px;
+            padding: 50px;
+            font-size: 18px;
+        }
+
+        img {
+            width: 350px;
+            border-radius: 20px;
+            margin-left: 480px;
+            margin-bottom: -200px;
+            border: 1px solid rgb(0, 0, 0);
+
+        }
+
+        .text {
+            margin-bottom: 200px;
+        }
+
+        .text p {
+            font-size: 25px;
+            width: 500px;
+            height: 90px;
+        }
+
+        .sec2 p>b {
+            width: 200px;
+            background-color: #b90401e3;
+            border: 2px solid #000000be;
+            color: rgb(214, 214, 214);
+            border-radius: 30px;
+            margin: 40px;
+            margin-bottom: 5px;
+            padding: 15px;
+            font-size: 22px;
+        }
+
+        .cards {
+            display: flex;
+            gap: 70px;
+            overflow-x: auto;
+            padding: 20px 0;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: thin;
+            width: 100%;
+            max-width: 100w;
+        }
+
+        .card {
+            width: 400px;
+            height: 500px;
+            flex: 0 0 50%;
+            scroll-snap-align: start;
+            box-sizing: border-box;
+            background: rgba(255, 255, 255, 0.6);
+            border-top: 5px solid #c5120f;
+            box-shadow: 0 5px 20px rgb(0, 0, 0, 1);
+            padding: 30px;
+            border-radius: 60px;
+            line-height: 1.6;
+            font-size: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .sec3 {
+            display: flex;
+            width: 1000px;
+            height: 600px;
+            background-color: #0000002f;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgb(0, 0, 0, 1);
+            margin: 150px;
+            padding: 50px;
+            gap: 40px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .num {
+            width: 400px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 25px;
+            padding: 120px 35px 35px;
+            line-height: 1.7;
+            font-size: 22px;
+            position: relative;
+        }
+
+        .head3 {
+            width: 300px;
+            background-color: #b90401e3;
+            border: 2px solid #000000be;
+            color: rgb(214, 214, 214);
+            border-radius: 50px;
+            position: absolute;
+            top: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 20px;
+            font-size: 22px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.jpg">
+
+            🩸 LifeLink
+        </div>
+
+        <nav>
+            <a href="homepage.html">Home</a>
+            <a href="donation.html">About Donation</a>
+            <a href="donerfit.html">DonerFit</a>
+            <a href="hemoglobin.html">HemoglobinCode</a>
+            <a href="firstdrop.html">FirstDrop</a>
+            <a href="TriSave.html">TriSave</a>
+            <a href="myths&facts.html">myths & facts</a>
+            <a href="blood map.html">BloodMap</a>
+        </nav>
+    </header>
+    <div class="fly">
+        <span>🩸 One single donation can save the lives of three or
+            more patients at the same time.</span>
+    </div>
+    <section class="sec1">
+        <div>
+            <h1 class="header1">🩸 Triple saving :- </h1>
+            <h3 class="header2">here meaning how this blood is used in
+                multiple ways to treat a specific condition</h3>
+        </div>
+
+        <div class="usage">
+            <img src="trisave1.jpg">
+
+
+            <div class="text">
+                <p> <b> How is donated blood used?</b></p>
+                <p>After donation, blood is separated into its main components:</p>
+                <ul>
+                    <li><b> Red blood cells →</b></li>
+                    tretat anemia and iron deficiency, save patients with severe bleeding from accidents and surgeries,
+                    support kidney and liver patients, and are essential for heart patients to improve oxygen levels.
+                    <li><b> White blood cells →</b></li>
+                    strengthen immunity after chemotherapy or radiation, are used in stem cell research to treat
+                    leukemia, and support patients with acquired or inherited immune deficiencies.
+                    <li><b> Platelets → </b></li>
+                    treat cancer patients who suffer from bleeding due to treatment, are essential in organ transplants
+                    and major surgeries, treat platelet deficiencies, and protect patients from dangerous internal
+                    bleeding.
+                    <li><b> Plasma →</b></li>
+                    treats hemophilia patients (recurrent bleeding), supports liver patients who have failed to produce
+                    clotting factors, and is essential for treating severe burns.
+                </ul>
+            </div>
+        </div>
+
+    </section>
+    <section class="sec2">
+
+        <p><b>🩸 Imagine with me for a moment :</b></p>
+
+        <div class="cards">
+
+            <div class="card">The story of a child — 4 years old, playing like any child. Suddenly, blood starts flowing
+                from his nose and won't stop.
+                His mother rushes him to the hospital, and the doctors say he has a rare platelet disorder. He needs a
+                platelet
+                transfusion every two weeks to live. The blood you donate might be the very thing that lets this child
+                grow up, dream, and
+                continue his life.</div>
+
+            <div class="card">The story of a mother — eight months pregnant, happy to see her newborn. But suddenly, she
+                had severe bleeding. She went into
+                the operating room in a race against death. She needed blood units every minute. That day, more than 10
+                donors, without knowing
+                who she was, gave their blood, silently stood by her, and saved her life and her baby's life. That
+                mother now hugs her son every
+                day and prays for those gracious hands.</div>
+
+            <div class="card">The story of a young man — On his way to university, a terrible accident. He entered the
+                hospital unconscious.
+                Internal bleeding almost ended his life within hours. He needed 15 units of blood — 15 people who heard
+                the call and donated on the same
+                day. That young man is now continuing his studies, graduated, got a job, and still returns to donate
+                every 3 months, to give
+                life back as he received it.</div>
+
+
+
+        </div>
+
+    </section>
+    <section class="sec3">
+        <div class="num">
+            <div class="head3">
+                <p><b>🩸 Real numbers from around the world:</b></p>
+            </div>
+            <h5>
+                · More than 118 million blood donations are collected every year worldwide.<br>
+
+                · But still, in many countries, people die because blood is not available.<br>
+
+                · In poor countries, more than half of all blood transfusions go to children under 5 — very young
+                children who can die from simple illnesses if there is no blood.<br>
+                <br>
+                •♡These are not movie stories — these are real stories from hospital wards we see every day.
+            </h5>
+        </div>
+        <div class="num">
+            <div class="head3">
+                <p><b>🩸 Real numbers from Egypt:</b></p>
+            </div>
+            <h5>
+                · Road accidents and childbirth are the two biggest reasons for needing blood in Egypt.<br>
+
+                · On holidays and public holidays, the blood supply drops dramatically, and many families struggle to
+                find donors.<br>
+
+                · Also during Ramadan, blood banks need more donors because
+                some people donate less due to fasting.<br>
+                <br><br><br>
+                •♡The real numbers (not just numbers, but stories)
+            </h5>
+        </div>
+
+    </section>
+</body>
+
+</html>

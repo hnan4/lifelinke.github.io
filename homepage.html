@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f5f5;
+      color: #222;
+    }
+
+    .screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: #7c0000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: hidescreen 3s forwards;
+    }
+
+    .loader span {
+      color: #f5f5f5;
+      font-size: 50px;
+      font-weight: bold;
+      font-family: inherit;
+      display: inline-block;
+      animation: flip 2.8s linear;
+      transform-origin: 0 70%;
+      letter-spacing: 10px;
+      text-shadow: 10PX 0 2px rgba(255, 255, 255, 0.219);
+    }
+
+    @keyframes flip {
+      35% {
+        transform: rotateZ(360deg);
+      }
+
+      100% {
+        transform: rotateZ(360deg);
+      }
+    }
+
+    @keyframes hidescreen {
+
+      0%,
+      75% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    header {
+      background: #f5f5f5;
+      padding: 20px 5%;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .logo {
+      text-align: center;
+      font-size: 42px;
+      font-weight: bold;
+      color: #e53935;
+      margin-bottom: 25px;
+    }
+
+    .logo img {
+      width: 90px;
+      position: absolute;
+      display: flex;
+      left: 20px;
+      top: 5px;
+      border-radius: 100px;
+      border: 2px solid #FFD700;
+      transition: 0.3s;
+
+    }
+
+    img:hover {
+      transform: scale(1.05);
+    }
+
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #222;
+      background: #f5f5f5;
+      padding: 12px 22px;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: 0.3s;
+      border: 2px solid #e53935;
+    }
+
+    nav a:hover {
+      background: #e53935;
+      color: white;
+    }
+
+    .header-btn {
+      display: flex;
+      justify-content: center;
+    }
+
+    .header-btn button {
+      padding: 15px 40px;
+      border: none;
+      border-radius: 40px;
+      background: #ef5350;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .header-btn button:hover {
+      background: #d32f2f;
+    }
+
+    .hero {
+      min-height: 85vh;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+        url(hb1.jpg);
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 63px;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      font-size: 26px;
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn-red,
+    .btn-white {
+      padding: 18px 40px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 22px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn-red {
+      background: #ef5350;
+      color: white;
+    }
+
+    .btn-red:hover {
+      background: #d32f2f;
+    }
+
+    .btn-white {
+      border: 3px solid white;
+      color: white;
+    }
+
+    .btn-white:hover {
+      background: white;
+      color: #d32f2f;
+    }
+
+    .info {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.425), rgba(0, 0, 0, 0.212)),
+        url(hb2.jpg);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 100%;
+      display: flex;
+      padding: 50px 5px;
+
+    }
+
+    .list {
+      width: 80%;
+      max-width: 800px;
+      margin: 50px auto;
+      background: #e4e4e4;
+      padding: 50px 60px;
+      border-radius: 25px;
+      text-align: center;
+      font-size: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .list h2 {
+      font-size: 50px;
+      color: #e53935;
+      margin-bottom: 50px;
+    }
+
+    .list ul {
+      list-style: none;
+      max-width: 700px;
+      margin: -30px;
+    }
+
+    .list ul li {
+      background: #f5f5f5;
+      margin: 18px 0;
+      padding: 20px;
+      border-left: 8px solid#ef5350;
+      border-radius: 15px;
+      font-size: 20px;
+      text-align: left;
+
+    }
+
+    footer {
+      background: #01011ff5;
+      color: rgb(255, 255, 255);
+      text-align: center;
+      padding: 20px 20px;
+    }
+
+    footer p {
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+
+    footer a {
+      color: #ff6b6b;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 22px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="screen">
+    <div class="loader">
+      <span style="animation-delay: 0.1s;">L</span>
+      <span style="animation-delay: 0.2s;">I</span>
+      <span style="animation-delay: 0.3s;">F</span>
+      <span style="animation-delay: 0.4s;">E</span>
+      <span style="animation-delay: 0.5s;">L</span>
+      <span style="animation-delay: 0.6s;">I</span>
+      <span style="animation-delay: 0.7s;">N</span>
+      <span style="animation-delay: 0.8s;">K</span>
+
+    </div>
+  </div>
+
+  <header>
+
+    <div class="logo">
+      <img src="logo.jpg">
+
+      🩸 LifeLink
+    </div>
+
+    <nav>
+      <a href="homepage.html">Home</a>
+      <hr>
+      <a href="donation.html">About Donation</a>
+      <hr>
+      <a href="donerfit.html">DonerFit</a>
+      <hr>
+      <a href="hemoglobin.html">HemoglobinCode</a>
+      <hr>
+      <a href="firstdrop.html">FirstDrop</a>
+      <hr>
+      <a href="TriSave.html">TriSave</a>
+      <hr>
+      <a href="myths&facts.html">myths & facts</a>
+      <a href="blood map.html">BloodMap</a>
+    </nav>
+
+    <div class="header-btn">
+      <button>Donate Now</button>
+    </div>
+
+  </header>
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <h1>Be Someone’s Hero Today</h1>
+
+      <p>
+        Blood donation is simple, safe, and takes only a short time.
+        Every drop matters and every donor can make a real difference
+        in someone’s life.
+      </p>
+
+      <div class="buttons">
+        <a href="blood map.html" class="btn-red">Find Donation Centers</a>
+        <a href="donation.html" class="btn-white">Learn More</a>
+      </div>
+
+    </div>
+
+  </section>
+  <section class="info">
+    <div class="list">
+      <h2>Why donate blood?</h2>
+      <ul>
+        <li>not every hand gives,but every giving hnad saves. lets see if yours is ready</li>
+        <li>from ancient dreams to modern banks. A journey of saveing lives</li>
+        <li>where does your blood become hope?here,in trusted hands</li>
+        <li>dont believe everything you hear, flip the lie,find the right</li>
+      </ul>
+
+    </div>
+  </section>
+  <footer>
+
+    <p>
+      © 2026 LifeLink | Donate Blood, Save Lives ❤️
+    </p>
+
+    <a href="blood map.html">
+      Find a donation center
+    </a>
+
+  </footer>
+</body>
+
+</html>

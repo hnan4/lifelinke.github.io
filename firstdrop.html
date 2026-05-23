@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Drop</title>
+    <style>
+        body {
+            background-image: url(bg.jpg);
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: rgb(0, 0, 0);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        header {
+            width: 1050px;
+            background: #f5f5f5;
+            padding: 10px 8%;
+            margin: 30px;
+            border-radius: 70px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .logo {
+            text-align: center;
+            font-weight: bold;
+            color: #e53935;
+            -webkit-text-stroke: 1px #000000;
+            font-size: 30px;
+            margin-bottom: 5px;
+        }
+
+        .logo img {
+            width: 90px;
+            position: absolute;
+            display: flex;
+            left: 45px;
+            top: 45px;
+            border-radius: 100px;
+            border: 2px solid #FFD700;
+            transition: 0.3s;
+
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #222;
+            background: #f5f5f5;
+            padding: 10px 10px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+            border: 2px solid #e53935;
+        }
+
+        nav a:hover {
+            background: #e53935;
+            color: white;
+        }
+
+        video {
+            display: block;
+            margin: 20px auto;
+            width: 40%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+
+        .img-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5)
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.6);
+            border-right: 5px solid #c5120f;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 15px;
+            max-width: 800px;
+            width: 90%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+        }
+
+        h1 {
+            color: #e53935;
+            -webkit-text-stroke: 1px #000000;
+            font-size: 30px;
+            margin-top: 0;
+            border-bottom: 1px solid rgba(255, 228, 196, 0.3);
+            padding-bottom: 10px;
+        }
+
+        p {
+            line-height: 1.7;
+            font-size: 18px;
+            text-align: justify;
+        }
+
+        h3 {
+            color: #FFD700;
+            -webkit-text-stroke: 1px #000000;
+            text-align: center;
+            margin-top: 40px;
+            font-size: 24px;
+        }
+
+
+        .img-container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="logo.jpg">
+
+            🩸 LifeLink
+        </div>
+
+        <nav>
+            <a href="homepage.html">Home</a>
+            <a href="donation.html">About Donation</a>
+            <a href="donerfit.html">DonerFit</a>
+            <a href="hemoglobin.html">HemoglobinCode</a>
+            <a href="firstdrop.html">FirstDrop</a>
+            <a href="TriSave.html">TriSave</a>
+            <a href="myths&facts.html">myths & facts</a>
+            <a href="blood map.html">BloodMap</a>
+        </nav>
+    </header>
+    <div class="img-container">
+        <img src="fd1.jpg" alt="Blood Donation Header">
+    </div>
+
+    <section>
+        <h2 style="text-align: center; font-size: 20px; color:#e53935; -webkit-text-stroke: 1px #000000;">
+            "Then after that, I will move you to stories and events, some of which are related to blood donation and
+            others about saving human lives."
+        </h2>
+    </section>
+
+    <section>
+        <h1>1. (The First Blood Bank):</h1>
+        <p>In 1930, a Russian doctor named Sergei Yudin was working in a small hospital. A woman died during childbirth
+            from severe bleeding, even though she only needed a small amount of blood. No donor was available in time.
+            So, he decided to take blood from the body of a man who had died from a heart attack just 6 hours earlier.
+            He tested it on another dead body, then on animals. When it worked, he tested it on a living person. The
+            world called him crazy, but he saved many lives. He kept developing the idea until he created the world's
+            first real blood bank. Because of him, we now have blood bags stored safely in fridges.</p>
+    </section>
+
+    <section>
+        <h1>2. (Discovery of Blood Types):</h1>
+        <p>Before 1901, if you donated blood to a friend, you might kill them. No one knew why. An Austrian doctor named
+            Karl Landsteiner noticed that when he mixed blood from two different people, sometimes it would clump up and
+            dissolve, and sometimes it wouldn't. He experimented with his own blood and his colleagues' blood. Finally,
+            he discovered that human blood is divided into 3 types: A, B, and O (the 4th type AB was found later). The
+            reason is that there are "antibodies" that attack any foreign type. Imagine: Only 100 years ago, everyone
+            thought their blood was fine for anyone. Landsteiner spent his life explaining this idea and prevented
+            thousands of deaths.
+            He won a Nobel Prize, and the world thanked him for making blood transfusion safe, not a gamble.</p>
+    </section>
+
+    <section>
+        <h1>3. (Blood in WWII):</h1>
+        <p>World War II was a disaster, but it also caused blood transfusion to develop rapidly. The American army had a
+            problem: How do you get liquid blood to the battlefield without it spoiling or clotting? They found the
+            solution in "dried blood." They would take plasma (the liquid part of blood), dry it into a yellow powder,
+            and put it in a small box with a tube and sterile salt. On the battlefield, a bleeding soldier would have
+            the powder mixed with water, shake it, and within minutes it became liquid blood ready for transfusion. This
+            method saved thousands of soldiers. They called it "war magic." It was the first time a part of blood was
+            separated and used alone.</p>
+    </section>
+
+    <section>
+        <h1>4. (The Bag That Saves 3):</h1>
+        <div class="img-container">
+            <img src="fd2.jpg" alt="Blood Bag Components">
+        </div>
+        <p>Before the 1970s, one blood bag went to a single patient. They would take the whole bag and give it to
+            someone bleeding heavily. But others in the hospital needed different things: one needed red blood cells for
+            anemia, another needed platelets because they were bleeding during surgery, and a child needed plasma for
+            burns. A smart American doctor thought, "Why not divide the bag into 3 parts before using it?" Using a
+            machine called a centrifuge (a spinning device), he was able to separate each part into its own small bag.
+            Suddenly, one bag saved 3 lives. This idea reduced the need for more donors and made sure each part of blood
+            went to the most suitable patient. Now, this is the system used everywhere.</p>
+    </section>
+
+    <section>
+        <h1>5. (The Man with the Golden Arm):</h1>
+        <p>In Australia in 1936, a baby named James Harrison was born. At age 14, he had major chest surgery and needed
+            blood from 13 donors to survive. After the surgery, he told himself, "When I grow up, I have to return the
+            favor." So, he started donating at age 18. When they tested his blood, they discovered something incredibly
+            rare: In his blood was a special antibody called Anti-D, which could protect unborn babies from a deadly
+            disease called "Rhesus disease." No one else in the world had this high concentration. He donated every two
+            weeks for 60 years. This saved over 2.4 million children. They called him "The Man with the Golden Arm." He
+            donated over 1,000 times. He stopped when he reached the legal age limit of 81. He's still alive, and no one
+            he saved will ever forget his name.</p>
+    </section>
+
+    <section>
+        <h1>6. (The Strong Blood Myth):</h1>
+        <p>In some old villages, people believed there was "strong blood" (blood from big strong men and farmers) and
+            "weak blood" (blood from women and younger people). When someone got sick, they would bring the strongest
+            man in the village, take his blood, and transfer it into the patient. The idea was that "strengthening" the
+            patient's blood would cure them, and they thought the whole "blood types" thing was nonsense. The result was
+            that patients died faster from clotting or bad reactions. It wasn't until scientists proved that blood types
+            were real — not a myth — that this stopped.</p>
+    </section>
+
+    <section>
+        <div class="img-container">
+            <img src="fd3.jpg" alt="Kasr Al Ainy Hospital History">
+        </div>
+        <h1>7. (First Transfusion in Egypt):</h1>
+        <p>In the late 19th century (around 1880), at Kasr Al Ainy Hospital, the first recorded blood transfusion in
+            Egypt took place. It was extremely primitive: a thin rubber tube, a fragile glass needle that broke easily,
+            and a donor who had to be a family member (often the mother, father, or brother). There was no such thing as
+            "antibody testing," and the whole process was a race against time. If the tube got blocked by clotted blood,
+            it was over.
+            In 1960, the first government blood bank was officially built, offering safe, type-divided blood. Today,
+            Egypt has over 300 blood transfusion centers, and its people fill them with the blood that saves lives.</p>
+    </section>
+
+    <h3>Famous Blood Donor</h3>
+    <video controls muted loop>
+        <source src="firstdrop.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+</body>
+
+</html>
